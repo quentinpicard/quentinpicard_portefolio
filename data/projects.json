@@ -1,11 +1,95 @@
 {
-  "growup": {
-    "title": "GrowUp",
-    "tag": "UX.UI",
-    "intro": "TODO : phrase d'intro",
-    "links": { "figma": "", "proto": "" },
-    "blocks": [
-      { "layout": "hero", "images": [], "text": "TODO" }
-    ]
+  "order": ["growup", "breasy", "tara", "stratevie", "lpg"],
+  "projects": {
+    "growup": {
+      "slug": "growup",
+      "title": "Growup - Application de potager en micro-zone",
+      "tags": ["UX Research", "UX.UI", "Tests utilisateurs"],
+      "intro": "Balcons, pots, bacs sur rooftop, le potager urbain demande une gestion différente. GrowUp adapte le suivi des cultures aux micro-zones, avec une expérience pensée de A à Z : de la recherche utilisateur jusqu'au prototype développé.",
+      "tools": ["Figma", "Claude", "Suite Adobe"],
+      "links": [
+        { "label": "View Figma", "url": "" },
+        { "label": "View Proto", "url": "" }
+      ],
+      "cover": "img/projects/growup/cover.jpg",
+      "blocks": [
+        { "type": "media", "layout": "hero", "images": ["img/projects/growup/01.jpg"] },
+        { "type": "text", "text": "La recherche s'est appuyée sur une collecte de verbatims issus de forums de jardinage urbain, questions, frustrations, conseils entre pairs. Ces retours ont alimenté deux tons of voice : Bruno, le voisin grincheux mais de bon conseil, et l'utilisateur, dans un registre plus simple et direct." },
+        { "type": "media", "layout": "trio", "images": ["img/projects/growup/02.jpg", "img/projects/growup/03.jpg", "img/projects/growup/04.jpg"] },
+        { "type": "text", "text": "Direction artistique créée from scratch : identité visuelle, palette, typographies Gabarito et Playpen Sans, choisies pour leur caractère. Bruno incarne l'application, un brocoli bougon avec un côté attachant, qui donne de bons conseils même quand il râle." },
+        { "type": "media", "layout": "duo", "images": ["img/projects/growup/05.jpg", "img/projects/growup/06.jpg"] },
+        { "type": "text", "text": "Un design system dédié à GrowUp structure l'ensemble des composants et variables du projet. Le prototype avancé, lui, part directement de la maquette Figma : codé en vibe coding, sans grande prétention mais avec suffisamment d'interactions pour conduire des tests utilisateurs dans des conditions proches du réel." },
+        { "type": "media", "layout": "solo", "images": ["img/projects/growup/07.jpg"] }
+      ]
+    },
+    "breasy": {
+      "slug": "breasy",
+      "title": "Breasy - Inhalo-cigarette Hackathon",
+      "tags": ["D.A", "UX.UI"],
+      "intro": "Créer une chimère produit et concevoir sa présence web complète. Notre réponse : Breasy, l'inhalo-cigarette. Un produit absurde qui dénonce la consommation de tabac sur un ton ironique et grotesque, en poussant le curseur jusqu'au bout \"fume, mais en bonne santé\".",
+      "tools": ["Figma"],
+      "links": [
+        { "label": "Site web", "url": "" }
+      ],
+      "cover": "img/projects/breasy/cover.jpg",
+      "blocks": [
+        { "type": "media", "layout": "hero", "images": ["img/projects/breasy/01.jpg"] },
+        { "type": "text", "text": "Identité visuelle médicale détournée, bordeaux, violet, bleu-gris, noir. Une palette qui joue la carte du sérieux pharmaceutique pour mieux amplifier l'absurdité du propos. Inter pour la neutralité clinique. L'inhalateur au centre de toutes les compositions, traité comme un vrai produit premium." },
+        { "type": "media", "layout": "duo", "images": ["img/projects/breasy/02.jpg", "img/projects/breasy/03.jpg"] },
+        { "type": "text", "text": "Maquette desktop conçue autour de l'inhalateur comme objet central, sections produit, statistiques détournées, témoignages fictifs. Collaboration directe avec le développeur pour l'intégration, du cadrage des interactions jusqu'au rendu final mis en ligne." },
+        { "type": "media", "layout": "trio", "images": ["img/projects/breasy/04.jpg", "img/projects/breasy/05.jpg", "img/projects/breasy/06.jpg"] }
+      ]
+    },
+    "tara": {
+      "slug": "tara",
+      "title": "Tara Polar Station - Étude de l'Arctique",
+      "tags": ["D.A", "UX.UI"],
+      "intro": "Concevoir une expérience web narrative verticale autour de la Tara Polar Station et de l'exploration arctique. L'enjeu : raconter une réalité scientifique et environnementale complexe en rendant la forme aussi forte que le fond.",
+      "tools": ["Figma"],
+      "links": [
+        { "label": "View Figma", "url": "" },
+        { "label": "View Proto", "url": "" }
+      ],
+      "cover": "img/projects/tara/cover.jpg",
+      "blocks": [
+        { "type": "media", "layout": "hero", "images": ["img/projects/tara/01.jpg"] },
+        { "type": "text", "text": "Direction artistique construite autour de l'identité visuelle de Tara, noir profond, orange incisif, typographie Rammetto One pour l'impact. Chaque choix graphique sert la narration : contraste fort, visuels pleine page, hiérarchie typographique pensée pour guider le regard dans le scroll." },
+        { "type": "media", "layout": "duo", "images": ["img/projects/tara/02.jpg", "img/projects/tara/03.jpg"] },
+        { "type": "text", "text": "Maquette desktop haute fidélité avec prototype Figma animé, transitions, déclencheurs de scroll et enchaînement des sections travaillés pour simuler l'expérience immersive finale. Le proto permet de valider le rythme narratif avant tout développement." },
+        { "type": "media", "layout": "solo", "images": ["img/projects/tara/04.jpg"] }
+      ]
+    },
+    "stratevie": {
+      "slug": "stratevie",
+      "title": "Stratevie - Application de promotion pour club de sport",
+      "tags": ["UX.UI"],
+      "intro": "Stratevie est une application de gestion de promotions pour clubs sportifs. Le principe : permettre aux clubs de proposer les offres de leurs partenaires directement à leurs membres.",
+      "tools": ["Figma"],
+      "links": [],
+      "cover": "img/projects/stratevie/cover.jpg",
+      "blocks": [
+        { "type": "media", "layout": "hero", "images": ["img/projects/stratevie/01.jpg"] },
+        { "type": "text", "text": "Design de l'interface d'administration côté club, gestion des membres, des partenaires et des promotions associées. Un back-office pensé pour des responsables non-techniques : créer une offre, associer un partenaire, suivre les données sans se perdre dans l'interface." },
+        { "type": "media", "layout": "duo", "images": ["img/projects/stratevie/02.jpg", "img/projects/stratevie/03.jpg"] },
+        { "type": "text", "text": "Design de la partie scan QR code, réflexion complète sur le parcours utilisateur, du déclenchement du scan jusqu'à la validation de l'offre. Un flux court, pensé pour être utilisé en situation réelle, debout, en quelques secondes." },
+        { "type": "media", "layout": "trio", "images": ["img/projects/stratevie/04.jpg", "img/projects/stratevie/05.jpg", "img/projects/stratevie/06.jpg"] }
+      ]
+    },
+    "lpg": {
+      "slug": "lpg",
+      "title": "Les Premières de Guyane - Webapp d'insertion professionnelle",
+      "tags": ["UX.UI"],
+      "intro": "Mission de refonte et conception d'une webapp pour Les Premières de Guyane, une plateforme qui met en relation des femmes guyanaises avec des professionnels pour les accompagner dans leur formation et leur insertion. L'enjeu : designer une interface qui permette de suivre chaque parcours individuellement, de l'entrée dans le dispositif jusqu'à l'insertion.",
+      "tools": ["Figma", "Claude"],
+      "links": [],
+      "cover": "img/projects/lpg/cover.jpg",
+      "blocks": [
+        { "type": "media", "layout": "hero", "images": ["img/projects/lpg/01.jpg"] },
+        { "type": "text", "text": "Refonte de l'arborescence à partir du site existant, restructuration complète pour gagner en ergonomie. Chaque entrée de navigation pensée pour correspondre aux actions concrètes des utilisatrices : créer une formation, ajouter une personne, suivre un projet étape par étape." },
+        { "type": "media", "layout": "duo", "images": ["img/projects/lpg/02.jpg", "img/projects/lpg/03.jpg"] },
+        { "type": "text", "text": "Conception d'un tableau kanban central pour visualiser et piloter les parcours d'insertion en un coup d'œil. Un outil de suivi pensé pour les professionnels qui accompagnent ces femmes : chaque colonne correspond à une étape clé du parcours, de l'entrée dans le dispositif jusqu'à l'insertion réussie." },
+        { "type": "media", "layout": "duo", "images": ["img/projects/lpg/04.jpg", "img/projects/lpg/05.jpg"] }
+      ]
+    }
   }
 }

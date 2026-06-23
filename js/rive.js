@@ -13,9 +13,9 @@ const buttonConfigs = [
   { selector: '#btn-instagram',         src: 'rive/icons_btn.riv' },
   { selector: '#btn-github',            src: 'rive/icons_btn.riv' },
   // Page Profil — boutons contact (portefolio_btn_contact.riv)
-  { selector: '#btn-email',             src: 'rive/portefolio_btn_contact.riv', label: 'E-mail' },
-  { selector: '#btn-contact-linkedin',  src: 'rive/portefolio_btn_contact.riv', label: 'Linkedin' },
-  { selector: '#btn-viewcv',            src: 'rive/portefolio_btn_contact.riv', label: 'View CV' },
+  { selector: '#btn-email',            src: 'rive/portefolio_btn_contact.riv', artboard: 'E-mail' },
+  { selector: '#btn-contact-linkedin', src: 'rive/portefolio_btn_contact.riv', artboard: 'Linkedin' },
+  { selector: '#btn-viewcv',           src: 'rive/portefolio_btn_contact.riv', artboard: 'CV' },
 ];
 
 const iconsArtboards = new Set(['instagram', 'github', 'left_arrow', 'right_arrow']);
@@ -44,21 +44,19 @@ function createRiveInstance(canvas, src, options = {}) {
       }
     };
 
+    console.log('[Rive] creating instance', canvas.id, '| artboard:', riveOptions.artboard ?? '(default)');
+
     const riveInst = new Rive({
       src,
       canvas,
       autoplay: true,
       layout: layoutOptions,
       onLoad: () => {
-        if (label) {
-          try {
-            const vmi = riveInst.viewModelInstance;
-            if (vmi) vmi.string('label').value = label;
-          } catch (e) {
-            // View Model indisponible — le texte du .riv reste tel quel
-          }
-        }
+        console.log('[Rive] loaded', canvas.id, '| artboard:', riveOptions.artboard ?? '(default)');
         resize(riveInst);
+      },
+      onLoadError: (e) => {
+        console.error('[Rive] LOAD ERROR for', canvas.id, '| artboard:', riveOptions.artboard, '|', e);
       },
       ...riveOptions,
     });
@@ -72,21 +70,23 @@ function createRiveInstance(canvas, src, options = {}) {
 }
 
 function initRiveButtons() {
-  buttonConfigs.forEach(({ selector, src, label }) => {
+  buttonConfigs.forEach(({ selector, src, label, artboard }) => {
     const canvas = document.querySelector(selector);
     if (!canvas) return;
 
     const canvasWrapper = canvas.closest('.btn-canvas-wrapper');
     const dataIcon = canvas.dataset.icon;
-    const options = label ? { label } : {};
+    const options = {};
+    if (label)    options.label    = label;
+    if (artboard) options.artboard = artboard;
 
     if (src.endsWith('icons_btn.riv') && dataIcon) {
-      const artboard = resolveIconArtboard(dataIcon);
-      if (!artboard) {
+      const resolvedArtboard = resolveIconArtboard(dataIcon);
+      if (!resolvedArtboard) {
         if (canvasWrapper) canvasWrapper.style.display = 'none';
         return;
       }
-      options.artboard = artboard;
+      options.artboard = resolvedArtboard;
     } else if (dataIcon) {
       options.artboard = dataIcon;
     }

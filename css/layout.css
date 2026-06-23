@@ -240,6 +240,7 @@
   gap: 4px;
   padding-top: var(--space-8);
   padding-right: var(--space-8);
+  padding-bottom: var(--space-8);
 }
 
 /* Positions cartes — mobile */
@@ -368,9 +369,18 @@
   .col-droite::-webkit-scrollbar { display: none; }
 
   .bento-projets {
+    width: 100%;
     padding-right: var(--space-8);
     padding-top: var(--space-8);
   }
+
+  /* Positions cartes — desktop (3 cols) */
+  .card-kit-ui    { grid-column: 1;          grid-row: 1; }
+  .card-breasy    { grid-column: 2;          grid-row: 1; }
+  .card-tara      { grid-column: 3;          grid-row: 1; }
+  .card-growup    { grid-column: 1 / span 2; grid-row: 2 / span 2; aspect-ratio: unset; }
+  .card-peyinnov  { grid-column: 3;          grid-row: 2; }
+  .card-premieres { grid-column: 3;          grid-row: 3; }
 }
 
 /* =========================================================
