@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .page-conteneur { outline: 3px solid green; }
+    .col-gauche { outline: 3px solid red; }
+    .grille-outils { outline: 3px solid blue; }
+  </style>
+</head>
+<body class="page-accueil">
+  <div class="bg-grid" aria-hidden="true"></div>
+  <main class="page-conteneur">
+    <div class="col-gauche">
+      <div class="bloc-hero">
+        <div class="hero-entete">
+          <div class="liste-tags">
+            <span class="tag tag--filled label">UX.UI</span>
+            <span class="tag tag--filled label">IA WORKFLOW</span>
+          </div>
+          <h1 class="hero-title">Product Designer</h1>
+        </div>
+        <p class="hero-intro"><strong>Quentin Picard</strong>, designer UX/UI. Ma force : penser l'expérience et la créer. <span class="accent">Recherche, maquettes, design system, vibecoding et front-end</span></p>
+      </div>
+      <div class="bloc-outils">
+        <p class="meta">Outils</p>
+        <div class="grille-outils">
+          <div class="carte-outil">Figma</div>
+          <div class="carte-outil">Rive</div>
+          <div class="carte-outil">Claude</div>
+          <div class="carte-outil">Suite Adobe</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -14,8 +14,84 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
-<body>
-  <!-- TODO : contenu de la page Accueil (colonne gauche + bento projets) -->
+<body class="page-accueil">
+
+  <!-- Fond décoratif grille -->
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <main class="page-conteneur">
+
+    <!-- ==============================
+         COLONNE GAUCHE — Bio / intro
+    ============================== -->
+    <div class="col-gauche">
+
+      <!-- Bloc Hero -->
+      <div class="bloc-hero">
+        <div class="hero-entete">
+          <div class="liste-tags">
+            <span class="tag tag--filled label">UX.UI</span>
+            <span class="tag tag--filled label">IA WORKFLOW</span>
+          </div>
+          <h1 class="hero-title">Product Designer</h1>
+        </div>
+        <p class="hero-intro">
+          <strong>Quentin Picard</strong>, designer UX/UI. Ma force&nbsp;: penser l'expérience et la créer.&nbsp;<span class="accent">Recherche, maquettes, design system, vibecoding et front-end</span>
+        </p>
+        <!-- Bouton Rive — À propos (canvas activé dans rive.js) -->
+        <div class="btn-canvas-wrapper">
+          <canvas id="btn-apropos" class="btn-canvas" width="252" height="62" aria-label="À propos"></canvas>
+          <a href="profil.html" class="btn-canvas-link" aria-label="À propos"></a>
+        </div>
+      </div>
+
+      <!-- Bloc Outils -->
+      <div class="bloc-outils">
+        <p class="meta">Outils</p>
+        <div class="grille-outils">
+          <div class="carte-outil">Figma</div>
+          <div class="carte-outil">Rive</div>
+          <div class="carte-outil">Claude</div>
+          <div class="carte-outil">Suite Adobe</div>
+        </div>
+      </div>
+
+      <!-- Réseaux sociaux — boutons Rive (icons_btn.riv) -->
+      <div class="barre-socials">
+        <div class="btn-canvas-wrapper btn-canvas-wrapper--social">
+          <canvas id="btn-instagram" class="btn-social" width="48" height="48" data-icon="instagram"></canvas>
+          <a href="#" class="btn-canvas-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+        <div class="btn-canvas-wrapper btn-canvas-wrapper--social">
+          <canvas id="btn-github" class="btn-social" width="48" height="48" data-icon="github"></canvas>
+          <a href="#" class="btn-canvas-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+        <div class="btn-canvas-wrapper btn-canvas-wrapper--social">
+          <canvas id="btn-linkedin" class="btn-social" width="48" height="48" data-icon="linkedin"></canvas>
+          <a href="#" class="btn-canvas-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </div>
+
+    </div><!-- /col-gauche -->
+
+    <!-- ==============================
+         COLONNE DROITE — Bento projets
+    ============================== -->
+    <div class="col-droite">
+      <div class="bento-projets" role="list" aria-label="Projets">
+
+        <a class="card-project card-kit-ui"    href="#" role="listitem" aria-label="Kit UI Figma"></a>
+        <a class="card-project card-breasy"    href="#" role="listitem" aria-label="Breasy"></a>
+        <a class="card-project card-tara"      href="#" role="listitem" aria-label="Tara Polar Station"></a>
+        <a class="card-project card-cockpit"   href="#" role="listitem" aria-label="CockpitVO"></a>
+        <a class="card-project card-peyinnov"  href="#" role="listitem" aria-label="Pey'innov"></a>
+        <a class="card-project card-premieres" href="#" role="listitem" aria-label="Les Premières"></a>
+        <a class="card-project card-growup"    href="#" role="listitem" aria-label="GrowUp"></a>
+
+      </div>
+    </div><!-- /col-droite -->
+
+  </main>
 
   <!-- <script type="module" src="js/rive.js"></script> -->
   <!-- <script type="module" src="js/animations.js"></script> -->

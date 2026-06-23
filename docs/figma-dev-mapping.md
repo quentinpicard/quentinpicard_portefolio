@@ -128,12 +128,16 @@ Squelettes :
 
 Les boutons ne sont **pas** codés en HTML/CSS : ce sont des artefacts `.riv` intégrés via le runtime Rive.
 
-### Composants concernés
-| Figma | Node | `.riv` proposé | State Machine |
+### Liaison composant Figma → fichier `.riv`
+| Fichier `.riv` | Composant Figma | Node | Contenu / usage |
 |---|---|---|---|
-| `Bouton` primary/secondary | `9:942` | `bouton.riv` | `Button SM` |
-| `Bouton réseau social` | `9:970` | `social.riv` | `Social SM` |
-| `Bouton retour` | `35:1731` | `retour.riv` | `Back SM` |
+| `portefolio_btn.riv` | `Bouton` variant **primary** | `9:942` | Bouton plein bleu (ex. « À propos »). Face `--color-blue` / base `--color-blue-deep` |
+| `portefolio_btn_contact.riv` | `Bouton` variant **secondary** | `9:942` | Boutons contact pleine largeur (E-mail / LinkedIn / View CV). Face `--color-ink` / base `--color-black`, bordure `--color-blue` |
+| `icons btn.riv` | `Bouton réseau social` + flèches carousel | `9:970`, `12:93` | Boutons à icône : réseaux sociaux (Insta / GitHub / LinkedIn) **et** navigation gauche / droite. L'icône change via le View Model |
+| *(à définir)* | `Bouton retour` | `35:1731` | Non couvert par les 3 fichiers ci-dessus. Option recommandée : le coder en **CSS pur** (il utilise `--shadow-hard`, reproductible sans Rive) |
+
+> Note 1 — le composant Figma `Bouton` (`9:942`) est découpé en **2 fichiers `.riv`** (primary → `portefolio_btn`, secondary → `portefolio_btn_contact`).
+> Note 2 — `icons btn.riv` contient un **espace** dans le nom → en chemin web il devra être encodé (`icons%20btn.riv`). Plus sûr de le renommer **`icons_btn.riv`** pour rester cohérent avec les deux autres (underscore).
 
 ### Recette de l'effet *chunky*
 Structure 2 couches : **face** (dessus) + **base** plus foncée qui dépasse en bas.
@@ -146,7 +150,8 @@ Structure 2 couches : **face** (dessus) + **base** plus foncée qui dépasse en 
 ### Inputs State Machine (convention)
 - `isHover` (bool) — entrée/sortie souris
 - `isPressed` (bool) — pointer down/up
-- `theme` (number) — 0 = primary, 1 = secondary
+
+> `portefolio_btn` et `portefolio_btn_contact` étant 2 fichiers séparés, pas besoin d'input `theme` pour basculer primary/secondary. Pour `icons btn`, prévoir à la place un input/View Model qui sélectionne l'icône (instagram / github / linkedin / arrow_back / arrow_forward).
 
 ### View Model (data binding)
 - `label` (string) — texte du bouton
@@ -158,18 +163,18 @@ Structure 2 couches : **face** (dessus) + **base** plus foncée qui dépasse en 
 <script type="module">
   import { Rive } from "https://unpkg.com/@rive-app/canvas";
   const r = new Rive({
-    src: "/rive/bouton.riv",
+    src: "/rive/portefolio_btn.riv",
     canvas: document.getElementById("btn-apropos"),
     stateMachines: "Button SM",
     autoplay: true,
     onLoad: () => {
       const vmi = r.viewModelInstance;             // View Model
       vmi.string("label").value = "À propos";
-      vmi.number("theme").value = 0;               // primary
       r.resizeDrawingSurfaceToCanvas();
     }
   });
   // les inputs isHover/isPressed sont pilotés par les events souris du canvas
+  // boutons contact → même logique avec src: "/rive/portefolio_btn_contact.riv"
 </script>
 ```
 

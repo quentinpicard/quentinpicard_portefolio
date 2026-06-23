@@ -38,6 +38,23 @@
   --leading-tight:0.9;
   --leading-snug:1.2;
 
+  /* Typo responsive — Hero H1 (valeurs Figma par breakpoint) */
+  --text-hero-mobile:64px;
+  --text-hero-tablet:40px;
+  --text-hero-laptop:80px;
+  --text-hero-desktop:96px;
+
+  /* Typo responsive — Intro & outils */
+  --text-intro:24px;
+  --text-intro-mobile:18px;
+  --text-outil:18px;
+  --text-outil-mobile:14px;
+
+  /* Espacement supplémentaire */
+  --space-14:14px;
+  --space-40:40px;
+  --space-48:48px;
+
   /* Ombre */
   --shadow-hard:0 6px 0 0 var(--color-black);
 }

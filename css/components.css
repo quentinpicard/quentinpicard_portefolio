@@ -1,27 +1,77 @@
-/* Tag */
-.tag{ display:inline-flex; align-items:center;
-  border:var(--border-thin) solid var(--color-ink);
-  border-radius:var(--radius-md);
-  padding:var(--space-8) var(--space-12); }
-.tag--filled{ background:var(--color-blue); color:var(--color-cream); }
-.tag--outline{ background:var(--color-cream); color:var(--color-ink); }
+/* =========================================================
+   COMPONENTS
+========================================================= */
 
-/* Carte process */
-.card-process{ display:flex; flex-direction:column; gap:var(--space-8);
-  background:var(--color-cream);
-  border:var(--border-thin) solid var(--color-ink);
-  border-radius:var(--radius-lg);
-  padding:var(--space-12); }
-.card-process .visuel{ height:175px;
-  background:var(--color-ink);
-  border:var(--border-thin) solid var(--color-ink);
-  border-radius:var(--radius-lg); }
+/* ---- Tag ---- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-8) var(--space-12);
+}
 
-/* Ligne expérience */
-.exp-row{ display:flex; align-items:center; justify-content:space-between;
-  background:var(--color-cream);
-  border:var(--border-thin) solid var(--color-ink);
-  border-radius:var(--radius-md);
-  padding:var(--space-16); }
+.tag--filled  { background: var(--color-blue);  color: var(--color-cream); }
+.tag--outline { background: var(--color-cream); color: var(--color-ink); }
 
-/* TODO : .card-project (bento), styles d'instances des boutons .riv (taille canvas) */
+/* ---- Carte outil ---- */
+.carte-outil {
+  background: var(--color-cream);
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-16);
+  font-family: var(--font-display);
+  font-size: var(--text-outil-mobile);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .carte-outil { font-size: var(--text-outil); }
+}
+
+/* ---- Carte projet (bento) ---- */
+.card-project {
+  display: block;
+  position: relative;
+  background: var(--color-ink);
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.card-project:hover {
+  opacity: 0.85;
+}
+
+/* ---- Carte process (page profil) ---- */
+.card-process {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  background: var(--color-cream);
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-lg);
+  padding: var(--space-12);
+}
+
+.card-process .visuel {
+  height: 175px;
+  background: var(--color-ink);
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-lg);
+}
+
+/* ---- Ligne expérience (page profil) ---- */
+.exp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-cream);
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-16);
+  list-style: none;
+}
