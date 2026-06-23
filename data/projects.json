@@ -1,0 +1,11 @@
+{
+  "growup": {
+    "title": "GrowUp",
+    "tag": "UX.UI",
+    "intro": "TODO : phrase d'intro",
+    "links": { "figma": "", "proto": "" },
+    "blocks": [
+      { "layout": "hero", "images": [], "text": "TODO" }
+    ]
+  }
+}

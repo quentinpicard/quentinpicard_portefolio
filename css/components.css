@@ -1,0 +1,27 @@
+/* Tag */
+.tag{ display:inline-flex; align-items:center;
+  border:var(--border-thin) solid var(--color-ink);
+  border-radius:var(--radius-md);
+  padding:var(--space-8) var(--space-12); }
+.tag--filled{ background:var(--color-blue); color:var(--color-cream); }
+.tag--outline{ background:var(--color-cream); color:var(--color-ink); }
+
+/* Carte process */
+.card-process{ display:flex; flex-direction:column; gap:var(--space-8);
+  background:var(--color-cream);
+  border:var(--border-thin) solid var(--color-ink);
+  border-radius:var(--radius-lg);
+  padding:var(--space-12); }
+.card-process .visuel{ height:175px;
+  background:var(--color-ink);
+  border:var(--border-thin) solid var(--color-ink);
+  border-radius:var(--radius-lg); }
+
+/* Ligne expérience */
+.exp-row{ display:flex; align-items:center; justify-content:space-between;
+  background:var(--color-cream);
+  border:var(--border-thin) solid var(--color-ink);
+  border-radius:var(--radius-md);
+  padding:var(--space-16); }
+
+/* TODO : .card-project (bento), styles d'instances des boutons .riv (taille canvas) */

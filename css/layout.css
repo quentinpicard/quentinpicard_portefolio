@@ -1,0 +1,12 @@
+/* Grilles des blocs projet (mappées sur les layouts du JSON) */
+.layout-hero{ /* TODO : 1 colonne, grande image */ }
+.layout-trio{ /* TODO : 3 colonnes */ }
+.layout-duo { /* TODO : 2 colonnes */ }
+
+/* Bento Accueil */
+.bento{ /* TODO : grille bento */ }
+
+/* Breakpoints (calés sur Figma) — mobile-first : base = mobile 393 */
+@media (min-width:768px){  /* Tablette  */ }
+@media (min-width:1280px){ /* Laptop    */ }
+@media (min-width:1440px){ /* Desktop   */ }

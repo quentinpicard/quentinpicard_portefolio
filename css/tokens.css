@@ -1,0 +1,43 @@
+:root{
+  /* Couleurs */
+  --color-cream:#F2EFE8;
+  --color-blue:#384BD6;
+  --color-blue-deep:#2838AD;   /* réf. Rive uniquement */
+  --color-ink:#202020;
+  --color-black:#101010;
+
+  /* Radius */
+  --radius-sm:12px;
+  --radius-md:14px;
+  --radius-lg:16px;
+  --radius-xl:22px;
+
+  /* Bordures */
+  --border-thin:4px;
+  --border-thick:6px;
+
+  /* Espacement */
+  --space-8:8px;
+  --space-12:12px;
+  --space-16:16px;
+  --space-24:24px;
+  --space-32:32px;
+  --space-64:64px;
+
+  /* Typo */
+  --font-display:"Archivo Black", sans-serif;
+  --font-body:"Archivo", sans-serif;
+  --text-xl:56px;
+  --text-l:24px;
+  --text-m:22px;
+  --text-s:20px;
+  --text-label:16px;
+  --text-body:16px;
+  --tracking-display:-0.08em;
+  --tracking-xl:-0.06em;
+  --leading-tight:0.9;
+  --leading-snug:1.2;
+
+  /* Ombre */
+  --shadow-hard:0 6px 0 0 var(--color-black);
+}
