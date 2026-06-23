@@ -92,9 +92,15 @@
 .btn-canvas-wrapper {
   position: relative;
   display: inline-block;
+  width: 260px;
+  height: 82px;
 }
 
-.btn-canvas { display: block; }
+.btn-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 .btn-canvas-link {
   position: absolute;
