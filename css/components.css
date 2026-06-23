@@ -58,6 +58,9 @@
   padding: var(--space-12);
 }
 
+.card-process h3 { margin: 0; padding-bottom: var(--space-8); }
+.card-process p  { margin: 0; }
+
 .card-process .visuel {
   height: 175px;
   background: var(--color-ink);
@@ -75,4 +78,38 @@
   border-radius: var(--radius-md);
   padding: var(--space-16);
   list-style: none;
+}
+
+/* ---- Bouton Retour (CSS pur — shadow-hard) ---- */
+.btn-retour {
+  display: inline-flex;
+  align-items: center;
+  width: 150px;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8) var(--space-32);
+  box-shadow: var(--shadow-hard);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  -webkit-appearance: none;
+}
+
+.btn-retour:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 0 var(--color-black);
+}
+
+/* ---- Bloc Contact (colonne gauche profil) ---- */
+.bloc-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ---- Canvas Rive — bouton contact pleine largeur ---- */
+.btn-canvas-wrapper--contact {
+  width: 260px;
+  height: 76px;
 }

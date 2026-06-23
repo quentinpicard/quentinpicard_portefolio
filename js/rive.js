@@ -9,9 +9,13 @@ if (!Rive) {
 }
 
 const buttonConfigs = [
-  { selector: '#btn-apropos', src: 'rive/portefolio_btn.riv' },
-  { selector: '#btn-instagram', src: 'rive/icons_btn.riv' },
-  { selector: '#btn-github', src: 'rive/icons_btn.riv' },
+  { selector: '#btn-apropos',          src: 'rive/portefolio_btn.riv' },
+  { selector: '#btn-instagram',         src: 'rive/icons_btn.riv' },
+  { selector: '#btn-github',            src: 'rive/icons_btn.riv' },
+  // Page Profil — boutons contact (portefolio_btn_contact.riv)
+  { selector: '#btn-email',             src: 'rive/portefolio_btn_contact.riv', label: 'E-mail' },
+  { selector: '#btn-contact-linkedin',  src: 'rive/portefolio_btn_contact.riv', label: 'Linkedin' },
+  { selector: '#btn-viewcv',            src: 'rive/portefolio_btn_contact.riv', label: 'View CV' },
 ];
 
 const iconsArtboards = new Set(['instagram', 'github', 'left_arrow', 'right_arrow']);
@@ -26,32 +30,41 @@ function resolveIconArtboard(name) {
 
 function createRiveInstance(canvas, src, options = {}) {
   if (!canvas) return;
+  const { label, ...riveOptions } = options;
+
   try {
     const layoutOptions = Layout
       ? new Layout({ fit: Fit.Fill, alignment: Alignment.Center })
       : { fit: Fit.Fill, alignment: Alignment.Center };
 
-    const rive = new Rive({
+    const dpr = window.devicePixelRatio || 1;
+    const resize = (r) => {
+      if (r && typeof r.resizeDrawingSurfaceToCanvas === 'function') {
+        r.resizeDrawingSurfaceToCanvas(dpr);
+      }
+    };
+
+    const riveInst = new Rive({
       src,
       canvas,
       autoplay: true,
       layout: layoutOptions,
-      ...options,
+      onLoad: () => {
+        if (label) {
+          try {
+            const vmi = riveInst.viewModelInstance;
+            if (vmi) vmi.string('label').value = label;
+          } catch (e) {
+            // View Model indisponible — le texte du .riv reste tel quel
+          }
+        }
+        resize(riveInst);
+      },
+      ...riveOptions,
     });
 
-    const dpr = window.devicePixelRatio || 1;
-    const resize = () => {
-      if (typeof rive.resizeDrawingSurfaceToCanvas === 'function') {
-        rive.resizeDrawingSurfaceToCanvas(dpr);
-      }
-    };
-
-    resize();
-    if (typeof rive.on === 'function') {
-      rive.on('load', resize);
-    }
-
-    return rive;
+    resize(riveInst);
+    return riveInst;
   } catch (error) {
     console.error('Rive initialization failed for', canvas.id, error);
     return null;
@@ -59,28 +72,26 @@ function createRiveInstance(canvas, src, options = {}) {
 }
 
 function initRiveButtons() {
-  buttonConfigs.forEach(({ selector, src }) => {
+  buttonConfigs.forEach(({ selector, src, label }) => {
     const canvas = document.querySelector(selector);
     if (!canvas) return;
 
     const canvasWrapper = canvas.closest('.btn-canvas-wrapper');
     const dataIcon = canvas.dataset.icon;
-    let config = {};
+    const options = label ? { label } : {};
 
     if (src.endsWith('icons_btn.riv') && dataIcon) {
       const artboard = resolveIconArtboard(dataIcon);
       if (!artboard) {
-        if (canvasWrapper) {
-          canvasWrapper.style.display = 'none';
-        }
+        if (canvasWrapper) canvasWrapper.style.display = 'none';
         return;
       }
-      config = { artboard };
+      options.artboard = artboard;
     } else if (dataIcon) {
-      config = { artboard: dataIcon };
+      options.artboard = dataIcon;
     }
 
-    createRiveInstance(canvas, src, config);
+    createRiveInstance(canvas, src, options);
   });
 }
 

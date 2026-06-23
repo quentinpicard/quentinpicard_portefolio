@@ -3,6 +3,82 @@
    Mobile-first. Breakpoints Figma : 768 / 1280 / 1440
 ========================================================= */
 
+/* =========================================================
+   LAYOUT — Page Profil
+   Réutilise .page-conteneur, .col-gauche, .col-droite
+   Les règles profil-* s'ajoutent à la colonne droite.
+========================================================= */
+
+/* ---- Contenu scrollable colonne droite ---- */
+.profil-col-droite-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  padding-top: var(--space-8);
+  padding-right: var(--space-8);
+  padding-bottom: var(--space-32);
+}
+
+/* ---- Médias : photo + mascotte côte à côte ---- */
+.profil-media-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.profil-photo-card,
+.profil-mascot-card {
+  flex: 1 0 0;
+  min-width: 0;
+  background: var(--color-cream);
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 353px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.profil-photo-img {
+  width: 68%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.profil-mascot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---- Grille process (4 cartes, 1 colonne par défaut) ---- */
+.profil-process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+/* ---- Bloc expérience ---- */
+.profil-exp-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.profil-exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   FOND décoratif (grille papier millimétré)
+========================================================= */
+
 /* ---- Fond décoratif (grille papier millimétré) ---- */
 .bg-grid {
   position: fixed;
@@ -23,12 +99,20 @@
 ========================================================= */
 
 /* ---- Page root — porte le padding horizontal ---- */
-.page-accueil {
+.page-accueil,
+.page-profil {
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
-  padding: var(--space-64) var(--space-16);
 }
+
+.page-accueil { padding: var(--space-64) var(--space-16); }
+.page-profil  { padding: var(--space-16); }       /* Figma mobile : 16px tout autour */
+
+/* Overrides profil — mobile (base) */
+.page-profil .page-conteneur { gap: var(--space-40); }  /* 40px entre col-gauche et col-droite */
+.page-profil .col-gauche     { gap: var(--space-32); }  /* 32px entre les 3 sections de la col */
+.page-profil .display-xl     { font-size: var(--text-xl-mobile); } /* 40px sur mobile */
 
 /* ---- Conteneur principal (flex column) ---- */
 .page-conteneur {
@@ -143,11 +227,14 @@
 /* ---- Colonne droite / bento ---- */
 .col-droite {
   min-width: 0;
+  display: flex;
+  justify-content: center;
 }
 
 /* Mobile : 2 colonnes, 7 rangées */
 .bento-projets {
   display: grid;
+  width: min(100%, 640px);
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: auto;
   gap: 4px;
@@ -159,7 +246,7 @@
 .card-cockpit   { grid-column: 1 / span 2; grid-row: 2 / span 2; }
 .card-tara      { grid-column: 1;          grid-row: 4; }
 .card-peyinnov  { grid-column: 2;          grid-row: 4; }
-.card-growup    { grid-column: 1 / span 2; grid-row: 5 / span 2; }
+.card-growup    { grid-column: 1 / span 2; grid-row: 2 / span 2; }
 .card-premieres { grid-column: 1;          grid-row: 7; }
 
 /* =========================================================
@@ -167,8 +254,27 @@
 ========================================================= */
 @media (min-width: 768px) {
 
-  .page-accueil {
-    padding: var(--space-64) var(--space-32);
+  .page-accueil { padding: var(--space-64) var(--space-32); }
+  .page-profil  { padding: var(--space-32); }      /* Figma tablette : 32px tout autour */
+
+  /* Overrides profil — tablette */
+  .page-profil .page-conteneur { gap: var(--space-48); }  /* 48px entre col-g et col-d */
+  .page-profil .col-gauche     { gap: var(--space-40); }  /* 40px entre les 3 sections */
+  .page-profil .display-xl     { font-size: var(--text-xl); } /* 56px dès tablette */
+
+  /* Médias côte à côte dès la tablette */
+  .profil-media-row {
+    flex-direction: row;
+  }
+
+  .profil-photo-card,
+  .profil-mascot-card {
+    height: 350px;
+  }
+
+  /* Process : 2 colonnes dès la tablette */
+  .profil-process-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .page-conteneur {
@@ -198,7 +304,7 @@
   .card-cockpit   { grid-column: 1 / span 2; grid-row: 2 / span 2; }
   .card-peyinnov  { grid-column: 3;          grid-row: 2; }
   .card-premieres { grid-column: 3;          grid-row: 3; }
-  .card-growup    { grid-column: 1 / span 3; grid-row: 4 / span 2; }
+  .card-growup    { grid-column: 1 / span 2; grid-row: 2 / span 2; }
 }
 
 /* =========================================================
@@ -208,11 +314,20 @@
 
   body { overflow: hidden; }
 
-  .page-accueil {
+  .page-accueil,
+  .page-profil {
     height: 100vh;
     overflow: hidden;
-    padding: 0;
+    padding: 0;                                     /* col-gauche py-64 + conteneur pl-64 gèrent l'espace */
   }
+
+  .profil-photo-card,
+  .profil-mascot-card {
+    height: 350px;
+  }
+
+  /* Override profil — laptop : gap entre les 2 colonnes */
+  .page-profil .page-conteneur { gap: var(--space-16); }
 
   .page-conteneur {
     flex-direction: row;
@@ -271,6 +386,9 @@
   .hero-title {
     font-size: var(--text-hero-desktop);
   }
+
+  /* Override profil — desktop : gap 32px entre les 2 colonnes */
+  .page-profil .page-conteneur { gap: var(--space-32); }
 }
 
 /* Grilles page projet (à compléter) */

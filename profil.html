@@ -14,10 +14,129 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
-<body>
-  <!-- TODO : contenu Profil (colonne gauche + tags compétences, cartes process, lignes expérience) -->
+<body class="page-profil">
 
-  <!-- <script type="module" src="js/rive.js"></script> -->
-  <!-- <script type="module" src="js/animations.js"></script> -->
+  <!-- Fond décoratif grille -->
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <main class="page-conteneur">
+
+    <!-- ==============================
+         COLONNE GAUCHE — 40 %
+    ============================== -->
+    <div class="col-gauche">
+
+      <!-- Bloc hero : bouton retour + titre + intro -->
+      <div class="bloc-hero">
+        <button class="btn-retour label" onclick="history.back()">Retour</button>
+        <h1 class="display-xl">Quentin Picard</h1>
+        <p class="body">Designer UX/UI/IxD avec un œil créatif et une conscience éco. Je pense les interfaces de la recherche utilisateur jusqu'au prototype avancé (vibe coding inclus). Ce qui me motive&nbsp;: créer des expériences utiles, mémorables et qui ne gaspillent rien.</p>
+      </div>
+
+      <!-- Compétences — tags -->
+      <div class="liste-tags">
+        <span class="tag tag--filled label">UX.UI</span>
+        <span class="tag tag--filled label">Design system</span>
+        <span class="tag tag--filled label">Product design</span>
+        <span class="tag tag--filled label">UX research</span>
+        <span class="tag tag--filled label">Tests utilisateurs</span>
+        <span class="tag tag--filled label">IA workflow</span>
+        <span class="tag tag--filled label">Front-end</span>
+      </div>
+
+      <!-- Bloc contact -->
+      <div class="bloc-contact">
+        <p class="meta">Me contacter</p>
+
+        <!-- Rive — portefolio_btn_contact.riv -->
+        <div class="btn-canvas-wrapper btn-canvas-wrapper--contact">
+          <canvas id="btn-email" class="btn-canvas" width="260" height="76" aria-label="E-mail"></canvas>
+          <a href="mailto:picardquentin7@gmail.com" class="btn-canvas-link" aria-label="Envoyer un e-mail"></a>
+        </div>
+
+        <div class="btn-canvas-wrapper btn-canvas-wrapper--contact">
+          <canvas id="btn-contact-linkedin" class="btn-canvas" width="260" height="76" aria-label="LinkedIn"></canvas>
+          <a href="https://www.linkedin.com/in/quentin-picard-/" class="btn-canvas-link" aria-label="Profil LinkedIn" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+
+        <div class="btn-canvas-wrapper btn-canvas-wrapper--contact">
+          <canvas id="btn-viewcv" class="btn-canvas" width="260" height="76" aria-label="View CV"></canvas>
+          <a href="#" class="btn-canvas-link" aria-label="Télécharger le CV"></a>
+        </div>
+      </div>
+
+    </div><!-- /col-gauche -->
+
+    <!-- ==============================
+         COLONNE DROITE — 60 % scrollable
+    ============================== -->
+    <div class="col-droite">
+      <div class="profil-col-droite-inner">
+
+        <!-- Photo + mascotte -->
+        <div class="profil-media-row">
+          <div class="profil-photo-card">
+            <img src="img/photo_quentin.png" alt="Quentin Picard" class="profil-photo-img">
+          </div>
+          <div class="profil-mascot-card">
+            <img src="img/Blue_Mascotte.png" alt="" class="profil-mascot-img" aria-hidden="true">
+          </div>
+        </div>
+
+        <!-- Bloc valeurs — 4 cartes process (2 × 2) -->
+        <div class="profil-process-grid">
+
+          <article class="card-process">
+            <div class="visuel" aria-hidden="true"></div>
+            <h3 class="display-s">Recherche &amp; Comprendre</h3>
+            <p class="body">Je commence par explorer le terrain&nbsp;: entretiens, recherche et questionnaires exploratoires, complétés par l'observation et des analytics lisibles. J'en tire des personas et des empathy maps actionnables, puis je cadre les vrais problèmes et je priorise les opportunités.</p>
+          </article>
+
+          <article class="card-process">
+            <div class="visuel" aria-hidden="true"></div>
+            <h3 class="display-s">Conception</h3>
+            <p class="body">Je pose l'architecture de l'information et des user flows clairs, puis je passe du wireframe à la maquette jusqu'à des prototypes testables. J'y intègre l'UX writing et les micro-interactions pour soigner l'expérience dans le détail.</p>
+          </article>
+
+          <article class="card-process">
+            <div class="visuel" aria-hidden="true"></div>
+            <h3 class="display-s">Prototype</h3>
+            <p class="body">J'adapte le prototype à l'objectif&nbsp;: pour cadrer les fonctionnalités et faciliter la passation aux développeurs, ou pour vibecoder un prototype avancé, proche du produit réel, et tester l'expérience dans des conditions fidèles.</p>
+          </article>
+
+          <article class="card-process">
+            <div class="visuel" aria-hidden="true"></div>
+            <h3 class="display-s">Test utilisateur</h3>
+            <p class="body">J'effectue des tests utilisateurs modérés ou à distance, audit ergonomique appuyé sur Nielsen et Bastien &amp; Scapin&nbsp;: j'identifie les points de friction et j'en tire des recommandations priorisées. Le tout alimente des boucles d'itération courtes.</p>
+          </article>
+
+        </div>
+
+        <!-- Bloc expérience -->
+        <section class="profil-exp-section">
+          <p class="meta">Expérience</p>
+          <ul class="profil-exp-list">
+            <li class="exp-row">
+              <span class="display-l">Limeo</span>
+              <span class="body">2024 — En cours</span>
+            </li>
+            <li class="exp-row">
+              <span class="display-l">CHU Rouen</span>
+              <span class="body">2023 — 2024</span>
+            </li>
+            <li class="exp-row">
+              <span class="display-l">Niort Frère</span>
+              <span class="body">2023</span>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+    </div><!-- /col-droite -->
+
+  </main>
+
+  <script src="https://unpkg.com/@rive-app/canvas@2.38.2/rive.js"></script>
+  <script type="module" src="js/rive.js"></script>
 </body>
 </html>
