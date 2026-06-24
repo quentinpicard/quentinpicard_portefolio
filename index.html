@@ -91,23 +91,47 @@
     <div class="col-droite">
       <div class="bento-projets" role="list" aria-label="Projets">
 
-        <a class="card-project card-kit-ui"    href="projet.html?slug=stratevie" role="listitem" aria-label="Stratevie">
+        <a class="card-project card-kit-ui" href="projet.html?slug=stratevie" role="listitem" aria-label="Stratevie" target="_blank" rel="noopener noreferrer">
           <img src="img/stratevie.png" alt="Stratevie">
+          <span class="card-tag label">Product Design</span>
+          <span class="card-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
         </a>
-        <a class="card-project card-breasy"    href="projet.html?slug=tara" role="listitem" aria-label="Tara Polar Station">
+        <a class="card-project card-breasy" href="projet.html?slug=tara" role="listitem" aria-label="Tara Polar Station" target="_blank" rel="noopener noreferrer">
           <img src="img/Tara Polar Station.png" alt="Tara Polar Station">
+          <span class="card-tag label">Site Web</span>
+          <span class="card-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
         </a>
-        <a class="card-project card-tara"      href="projet.html?slug=breasy" role="listitem" aria-label="Breasy">
+        <a class="card-project card-tara" href="projet.html?slug=breasy" role="listitem" aria-label="Breasy" target="_blank" rel="noopener noreferrer">
           <img src="img/Breasy.png" alt="Breasy">
+          <span class="card-tag label">Site Web</span>
+          <span class="card-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
         </a>
-        <a class="card-project card-growup"    href="projet.html?slug=growup" role="listitem" aria-label="GrowUp">
+        <a class="card-project card-growup" href="projet.html?slug=growup" role="listitem" aria-label="GrowUp" target="_blank" rel="noopener noreferrer">
           <img src="img/Growup.png" alt="GrowUp">
+          <span class="card-tag label">Product Design</span>
+          <span class="card-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
         </a>
-        <a class="card-project card-peyinnov"  href="projet.html?slug=lpg" role="listitem" aria-label="Les Premières">
+        <a class="card-project card-peyinnov" href="projet.html?slug=lpg" role="listitem" aria-label="Les Premières" target="_blank" rel="noopener noreferrer">
           <img src="img/LPG.png" alt="Les Premières">
+          <span class="card-tag label">UX.UI</span>
+          <span class="card-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
         </a>
         <a class="card-project card-premieres" href="https://www.figma.com/design/4dqv7v5U4SKfIdqY3fzmtU/-Design-system--PFE---Composant---Variable?node-id=0-1&t=5U5Iurj6ixhqbOcT-1" role="listitem" aria-label="Kit UI Figma" target="_blank" rel="noopener noreferrer">
           <img src="img/kit ui.png" alt="Kit UI Figma">
+          <span class="card-tag label">Design System</span>
+          <span class="card-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
         </a>
 
       </div>
@@ -120,5 +144,23 @@
   <!-- <script type="module" src="js/rive.js"></script> -->
   <!-- <script type="module" src="js/animations.js"></script> -->
   <!-- <script type="module" src="js/projects.js"></script> -->
+
+  <div id="card-tooltip" class="card-tooltip" aria-hidden="true"></div>
+  <script>
+    (function () {
+      const tip = document.getElementById('card-tooltip');
+      document.querySelectorAll('.card-project').forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+          tip.textContent = card.getAttribute('aria-label');
+          tip.style.left = e.clientX + 'px';
+          tip.style.top = e.clientY + 'px';
+          tip.classList.add('is-visible');
+        });
+        card.addEventListener('mouseleave', function () {
+          tip.classList.remove('is-visible');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -39,15 +39,10 @@
   border: var(--border-thin) solid var(--color-ink);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 @media (max-width: 1279px) {
   .card-project { aspect-ratio: 1 / 1; }
-}
-
-.card-project:hover {
-  opacity: 0.85;
 }
 
 .card-project img {
@@ -55,6 +50,67 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.card-project:hover img {
+  transform: scale(1.05);
+}
+
+/* Tag — slide du haut */
+.card-tag {
+  position: absolute;
+  top: var(--space-16);
+  left: var(--space-16);
+  background: var(--color-blue);
+  color: var(--color-cream);
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-8) var(--space-12);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-project:hover .card-tag {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Flèche — slide du bas */
+.card-arrow {
+  position: absolute;
+  bottom: var(--space-16);
+  right: var(--space-16);
+  width: 48px;
+  height: 48px;
+  background: var(--color-cream);
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-project:hover .card-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile & tablette : tag + flèche toujours visibles */
+@media (max-width: 1279px) {
+  .card-tag,
+  .card-arrow {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ---- Carte process (page profil) ---- */
@@ -253,6 +309,31 @@
 .btn-contact:active {
   transform: translateY(3px);
   padding-bottom: 3px;
+}
+
+/* ---- Tooltip curseur (cards projet) ---- */
+.card-tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: 14px;
+  padding: var(--space-8) var(--space-16);
+  font-family: var(--font-display);
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 200;
+  transform: translate(16px, -50%);
+}
+
+.card-tooltip.is-visible {
+  opacity: 1;
 }
 
 /* ---- Lightbox ---- */
