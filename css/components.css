@@ -50,6 +50,13 @@
   opacity: 0.85;
 }
 
+.card-project img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ---- Carte process (page profil) ---- */
 .card-process {
   display: flex;
