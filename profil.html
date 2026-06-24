@@ -47,22 +47,15 @@
       <!-- Bloc contact -->
       <div class="bloc-contact">
         <p class="meta">Me contacter</p>
-
-        <!-- Rive — portefolio_btn_contact.riv -->
-        <div class="btn-canvas-wrapper btn-canvas-wrapper--contact">
-          <canvas id="btn-email" class="btn-canvas" width="260" height="76" aria-label="E-mail"></canvas>
-          <a href="mailto:picardquentin7@gmail.com" class="btn-canvas-link" aria-label="Envoyer un e-mail"></a>
-        </div>
-
-        <div class="btn-canvas-wrapper btn-canvas-wrapper--contact">
-          <canvas id="btn-contact-linkedin" class="btn-canvas" width="260" height="76" aria-label="LinkedIn"></canvas>
-          <a href="https://www.linkedin.com/in/quentin-picard-/" class="btn-canvas-link" aria-label="Profil LinkedIn" target="_blank" rel="noopener noreferrer"></a>
-        </div>
-
-        <div class="btn-canvas-wrapper btn-canvas-wrapper--contact">
-          <canvas id="btn-viewcv" class="btn-canvas" width="260" height="76" aria-label="View CV"></canvas>
-          <a href="#" class="btn-canvas-link" aria-label="Télécharger le CV"></a>
-        </div>
+        <a href="mailto:picardquentin7@gmail.com" class="btn-contact">
+          <span class="btn-contact__face">E-mail</span>
+        </a>
+        <a href="https://www.linkedin.com/in/quentin-picard-/" class="btn-contact" target="_blank" rel="noopener noreferrer">
+          <span class="btn-contact__face">LinkedIn</span>
+        </a>
+        <a href="img/Cv - Quentin Picard.pdf" class="btn-contact" target="_blank" rel="noopener noreferrer">
+          <span class="btn-contact__face">View CV</span>
+        </a>
       </div>
 
     </div><!-- /col-gauche -->
@@ -136,7 +129,8 @@
 
   </main>
 
-  <script src="https://unpkg.com/@rive-app/canvas@2.38.2/rive.js"></script>
-  <script type="module" src="js/rive.js"></script>
+  <!-- Rive désactivé (boutons remplacés en CSS) -->
+  <!-- <script src="https://unpkg.com/@rive-app/canvas@2.38.2/rive.js"></script> -->
+  <!-- <script type="module" src="js/rive.js"></script> -->
 </body>
 </html>
