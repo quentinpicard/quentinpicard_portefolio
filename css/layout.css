@@ -402,7 +402,208 @@
   .page-profil .page-conteneur { gap: var(--space-32); }
 }
 
-/* Grilles page projet (à compléter) */
-.layout-hero { }
-.layout-trio { }
-.layout-duo  { }
+/* =========================================================
+   LAYOUT — Page Projet
+   Mobile-first. Breakpoints Figma : 768 / 1280
+========================================================= */
+
+/* ---- Wrapper page ---- */
+.page-projet {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 0 var(--space-16);
+}
+
+/* ---- Conteneur (col-gauche + col-droite) ---- */
+.proj-conteneur {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+}
+
+/* ---- Colonne gauche ---- */
+.proj-col-gauche {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-51);
+  padding: var(--space-64) 0;
+}
+
+/* En-tête : [Retour] + [< >] côte à côte (mobile/tablette) */
+.proj-entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Groupes de navigation */
+.proj-nav-inline { display: flex; gap: var(--space-24); align-items: center; }
+.proj-nav-bottom { display: none;  gap: var(--space-24); align-items: center; }
+
+/* Bloc hero gauche */
+.proj-bloc-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.proj-hero-entete {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* Actions CTA : empilées sur mobile */
+.proj-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.proj-actions .btn-chunky { width: 100%; justify-content: center; }
+
+/* ---- Colonne droite ---- */
+.proj-col-droite {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  padding-top: var(--space-8);
+  padding-right: var(--space-8);
+  padding-bottom: var(--space-32);
+}
+
+/* Média hero (pleine largeur, ratio 18/10) */
+.proj-img-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 18 / 10;
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-ink);
+  flex-shrink: 0;
+}
+
+.proj-img-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Wrapper commun des galeries (padding 8px autour) */
+.proj-galerie {
+  width: 100%;
+  padding: var(--space-8);
+  flex-shrink: 0;
+}
+
+/* Cellule image commune */
+.proj-img-wrap {
+  position: relative;
+  border: var(--border-thin) solid var(--color-ink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-ink);
+}
+
+.proj-img-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Trio : 2×2 sur mobile */
+.proj-galerie--trio {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+}
+
+.proj-galerie--trio .proj-img-wrap { aspect-ratio: 1; }
+
+/* Duo : 2 colonnes */
+.proj-galerie--duo {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.proj-galerie--duo .proj-img-wrap {
+  flex: 1 0 0;
+  min-width: 0;
+  aspect-ratio: 1;
+}
+
+/* Solo : image pleine largeur hauteur fixe */
+.proj-galerie--solo { display: block; }
+.proj-galerie--solo .proj-img-wrap { height: var(--height-proj-solo); }
+
+/* =========================================================
+   TABLETTE — 768px (Projet)
+========================================================= */
+@media (min-width: 768px) {
+  .page-projet { padding: 0 var(--space-32); }
+
+  /* CTA côte à côte */
+  .proj-actions { flex-direction: row; }
+  .proj-actions .btn-chunky { width: auto; }
+
+  /* Trio : 3 colonnes */
+  .proj-galerie--trio { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* =========================================================
+   LAPTOP — 1280px (Projet)
+========================================================= */
+@media (min-width: 1280px) {
+  .page-projet {
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 0 0 var(--space-64);
+  }
+
+  .proj-conteneur {
+    flex-direction: row;
+    align-items: stretch;
+    height: 100vh;
+    gap: var(--space-14);
+  }
+
+  /* Colonne gauche : 40%, fixe, espace-between */
+  .proj-col-gauche {
+    flex: 0 0 40%;
+    width: 40%;
+    height: 100vh;
+    gap: 0;
+    justify-content: space-between;
+    padding: var(--space-64) 0;
+    overflow: hidden;
+  }
+
+  /* Sur laptop : entête = retour seul, nav passe en bas */
+  .proj-entete      { display: block; }
+  .proj-nav-inline  { display: none;  }
+  .proj-nav-bottom  { display: flex;  }
+
+  /* CTA côte à côte */
+  .proj-actions { flex-direction: row; }
+  .proj-actions .btn-chunky { width: auto; }
+
+  /* Colonne droite : 60%, scrollable */
+  .proj-col-droite {
+    flex: 1;
+    min-width: 0;
+    height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-bottom: var(--space-64);
+  }
+
+  .proj-col-droite::-webkit-scrollbar { display: none; }
+}

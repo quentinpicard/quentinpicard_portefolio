@@ -123,3 +123,98 @@
   width: 260px;
   height: 76px;
 }
+
+/* ---- Titre projet ---- */
+.proj-titre {
+  font-family: var(--font-display);
+  font-size: var(--text-proj-title-mobile);
+  letter-spacing: var(--tracking-xl);
+  line-height: var(--leading-tight);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .proj-titre { font-size: var(--text-proj-title); }
+}
+
+/* ---- Texte bloc colonne droite (bold + centré) ---- */
+.proj-texte {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--text-body);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .proj-texte { font-size: var(--text-l); }
+}
+
+/* ---- Bouton chunky (CTA : View Figma, View Proto) ---- */
+.btn-chunky {
+  display: inline-flex;
+  align-items: flex-end;
+  background: var(--color-blue-deep);
+  border: var(--border-thin) solid var(--color-black);
+  border-radius: var(--radius-md);
+  padding-bottom: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.btn-chunky__face {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: var(--color-blue);
+  color: var(--color-cream);
+  font-family: var(--font-display);
+  font-size: var(--text-s);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 1;
+  padding: var(--space-8) var(--space-32) 6px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-chunky:active {
+  transform: translateY(3px);
+  padding-bottom: 3px;
+}
+
+/* ---- Bouton nav icône (< >) ---- */
+.btn-nav {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--color-black);
+  border: var(--border-thin) solid var(--color-blue);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0 0 var(--space-8) 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.btn-nav__face {
+  background: var(--color-ink);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: var(--space-8);
+}
+
+.btn-nav svg { display: block; flex-shrink: 0; }
+
+.btn-nav:active { transform: translateY(2px); }

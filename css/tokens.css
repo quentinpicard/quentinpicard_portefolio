@@ -58,4 +58,10 @@
 
   /* Ombre */
   --shadow-hard:0 6px 0 0 var(--color-black);
+
+  /* Page Projet */
+  --space-51:51px;
+  --text-proj-title:40px;
+  --text-proj-title-mobile:32px;
+  --height-proj-solo:444px;
 }
