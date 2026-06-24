@@ -130,6 +130,49 @@ async function init() {
     buildLeftCol(project) + buildRightCol(project);
 
   attachNavHandlers(prevSlug, nextSlug);
+  initLightbox();
+}
+
+function initLightbox() {
+  const SVG_CLOSE = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M18 6L6 18M6 6l12 12" stroke="#F2EFE8" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>`;
+
+  const lb = document.createElement('div');
+  lb.id = 'lightbox';
+  lb.className = 'lightbox';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-label', 'Image agrandie');
+  lb.innerHTML = `
+    <button class="lightbox__close btn-nav" aria-label="Fermer">
+      <span class="btn-nav__face">${SVG_CLOSE}</span>
+    </button>
+    <img class="lightbox__img" src="" alt="">
+  `;
+  document.body.appendChild(lb);
+
+  const img = lb.querySelector('.lightbox__img');
+
+  const open = (src, alt) => {
+    img.src = src;
+    img.alt = alt || '';
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const close = () => {
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  lb.querySelector('.lightbox__close').addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+  document.querySelectorAll('.proj-img-wrap img, .proj-img-hero img').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', () => open(el.src, el.alt));
+  });
 }
 
 init();
