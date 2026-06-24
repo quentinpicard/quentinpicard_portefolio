@@ -8,8 +8,8 @@
       "intro": "Balcons, pots, bacs sur rooftop, le potager urbain demande une gestion différente. GrowUp adapte le suivi des cultures aux micro-zones, avec une expérience pensée de A à Z : de la recherche utilisateur jusqu'au prototype développé.",
       "tools": ["Figma", "Claude", "Suite Adobe"],
       "links": [
-        { "label": "View Figma", "url": "" },
-        { "label": "View Proto", "url": "" }
+        { "label": "View Figma", "url": "https://www.figma.com/design/3EKbLwEyS4DBsrCQ4YHkuv/-Maquette--PFE---Growup?node-id=1-8&t=D7GLGFTUlSwNdfuE-1" },
+        { "label": "View Proto", "url": "https://growup-green.vercel.app/onboarding" }
       ],
       "cover": "img/projects/growup/cover.jpg",
       "blocks": [
@@ -29,7 +29,7 @@
       "intro": "Créer une chimère produit et concevoir sa présence web complète. Notre réponse : Breasy, l'inhalo-cigarette. Un produit absurde qui dénonce la consommation de tabac sur un ton ironique et grotesque, en poussant le curseur jusqu'au bout \"fume, mais en bonne santé\".",
       "tools": ["Figma"],
       "links": [
-        { "label": "Site web", "url": "" }
+        { "label": "Site web", "url": "https://loicstr.github.io/breasy/" }
       ],
       "cover": "img/projects/breasy/cover.jpg",
       "blocks": [
@@ -47,8 +47,8 @@
       "intro": "Concevoir une expérience web narrative verticale autour de la Tara Polar Station et de l'exploration arctique. L'enjeu : raconter une réalité scientifique et environnementale complexe en rendant la forme aussi forte que le fond.",
       "tools": ["Figma"],
       "links": [
-        { "label": "View Figma", "url": "" },
-        { "label": "View Proto", "url": "" }
+        { "label": "View Figma", "url": "https://www.figma.com/design/su71kdczsh0CtKZDA4TfmO/M2---UxUi---D.A---Quentin-Picard---Tara-Polar-Station?node-id=134-463&t=N9fwMzgwasLjS67p-1" },
+        { "label": "View Proto", "url": "https://www.figma.com/proto/su71kdczsh0CtKZDA4TfmO/M2---UxUi---D.A---Quentin-Picard---Tara-Polar-Station?node-id=95-1099&p=f&viewport=421%2C45%2C0.05&t=7791doWfR3pvllkM-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=95%3A1099&page-id=95%3A1098" }
       ],
       "cover": "img/projects/tara/cover.jpg",
       "blocks": [
