@@ -24,7 +24,7 @@
     <!-- ==============================
          COLONNE GAUCHE — Bio / intro
     ============================== -->
-    <div class="col-gauche">
+    <div class="col-gauche anim-enter-left">
 
       <!-- Bloc Hero -->
       <div class="bloc-hero">
@@ -88,38 +88,38 @@
     <!-- ==============================
          COLONNE DROITE — Bento projets
     ============================== -->
-    <div class="col-droite">
+    <div class="col-droite anim-enter-right">
       <div class="bento-projets" role="list" aria-label="Projets">
 
-        <a class="card-project card-kit-ui" href="projet.html?slug=stratevie" role="listitem" aria-label="Stratevie" target="_blank" rel="noopener noreferrer">
+        <a class="card-project card-kit-ui" href="projet.html?slug=stratevie" role="listitem" aria-label="Stratevie">
           <img src="img/stratevie.png" alt="Stratevie">
           <span class="card-tag label">Product Design</span>
           <span class="card-arrow" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
         </a>
-        <a class="card-project card-breasy" href="projet.html?slug=tara" role="listitem" aria-label="Tara Polar Station" target="_blank" rel="noopener noreferrer">
+        <a class="card-project card-breasy" href="projet.html?slug=tara" role="listitem" aria-label="Tara Polar Station">
           <img src="img/Tara Polar Station.png" alt="Tara Polar Station">
           <span class="card-tag label">Site Web</span>
           <span class="card-arrow" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
         </a>
-        <a class="card-project card-tara" href="projet.html?slug=breasy" role="listitem" aria-label="Breasy" target="_blank" rel="noopener noreferrer">
+        <a class="card-project card-tara" href="projet.html?slug=breasy" role="listitem" aria-label="Breasy">
           <img src="img/Breasy.png" alt="Breasy">
           <span class="card-tag label">Site Web</span>
           <span class="card-arrow" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
         </a>
-        <a class="card-project card-growup" href="projet.html?slug=growup" role="listitem" aria-label="GrowUp" target="_blank" rel="noopener noreferrer">
+        <a class="card-project card-growup" href="projet.html?slug=growup" role="listitem" aria-label="GrowUp">
           <img src="img/Growup.png" alt="GrowUp">
           <span class="card-tag label">Product Design</span>
           <span class="card-arrow" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="#202020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
         </a>
-        <a class="card-project card-peyinnov" href="projet.html?slug=lpg" role="listitem" aria-label="Les Premières" target="_blank" rel="noopener noreferrer">
+        <a class="card-project card-peyinnov" href="projet.html?slug=lpg" role="listitem" aria-label="Les Premières">
           <img src="img/LPG.png" alt="Les Premières">
           <span class="card-tag label">UX.UI</span>
           <span class="card-arrow" aria-hidden="true">
@@ -145,6 +145,7 @@
   <!-- <script type="module" src="js/animations.js"></script> -->
   <!-- <script type="module" src="js/projects.js"></script> -->
 
+  <script src="js/transitions.js"></script>
   <div id="card-tooltip" class="card-tooltip" aria-hidden="true"></div>
   <script>
     (function () {

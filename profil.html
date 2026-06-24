@@ -24,11 +24,11 @@
     <!-- ==============================
          COLONNE GAUCHE — 40 %
     ============================== -->
-    <div class="col-gauche">
+    <div class="col-gauche anim-enter-left">
 
       <!-- Bloc hero : bouton retour + titre + intro -->
       <div class="bloc-hero">
-        <button class="btn-retour label" onclick="history.back()">Retour</button>
+        <a href="index.html" class="btn-retour label">Retour</a>
         <h1 class="display-xl">Quentin Picard</h1>
         <p class="body">Designer UX/UI/IxD avec un œil créatif et une conscience éco. Je pense les interfaces de la recherche utilisateur jusqu'au prototype avancé (vibe coding inclus). Ce qui me motive&nbsp;: créer des expériences utiles, mémorables et qui ne gaspillent rien.</p>
       </div>
@@ -63,7 +63,7 @@
     <!-- ==============================
          COLONNE DROITE — 60 % scrollable
     ============================== -->
-    <div class="col-droite">
+    <div class="col-droite anim-enter-right">
       <div class="profil-col-droite-inner">
 
         <!-- Photo + mascotte -->
@@ -132,5 +132,6 @@
   <!-- Rive désactivé (boutons remplacés en CSS) -->
   <!-- <script src="https://unpkg.com/@rive-app/canvas@2.38.2/rive.js"></script> -->
   <!-- <script type="module" src="js/rive.js"></script> -->
+  <script src="js/transitions.js"></script>
 </body>
 </html>

@@ -96,7 +96,11 @@ function buildRightCol(project) {
 }
 
 function attachNavHandlers(prevSlug, nextSlug) {
-  const go = slug => { window.location.href = `projet.html?slug=${slug}`; };
+  const go = slug => {
+    const dest = `projet.html?slug=${slug}`;
+    if (window.__transitions) { window.__transitions.playExit(dest); }
+    else { window.location.href = dest; }
+  };
   ['h', 'f'].forEach(suffix => {
     document.getElementById(`btn-prev-${suffix}`)?.addEventListener('click', () => go(prevSlug));
     document.getElementById(`btn-next-${suffix}`)?.addEventListener('click', () => go(nextSlug));
@@ -128,6 +132,12 @@ async function init() {
 
   document.getElementById('proj-page').innerHTML =
     buildLeftCol(project) + buildRightCol(project);
+
+  if (window.__transitions) {
+    const left = document.querySelector('.proj-col-gauche');
+    const right = document.querySelector('.proj-col-droite');
+    window.__transitions.enterDynamic(left, right);
+  }
 
   attachNavHandlers(prevSlug, nextSlug);
   initLightbox();

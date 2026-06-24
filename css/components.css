@@ -2,6 +2,32 @@
    COMPONENTS
 ========================================================= */
 
+/* ---- Transitions de page ---- */
+@keyframes pg-enter-left {
+  from { opacity: 0; transform: translateY(-60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pg-enter-right {
+  from { opacity: 0; transform: translateY(60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pg-exit-left {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(60px); }
+}
+@keyframes pg-exit-right {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-60px); }
+}
+
+.anim-enter-left  { animation: pg-enter-left  0.35s ease 0.03s both; }
+.anim-enter-right { animation: pg-enter-right 0.35s ease 0.03s both; }
+
+.page-exiting .col-gauche,
+.page-exiting .proj-col-gauche { animation: pg-exit-left  0.35s ease both; }
+.page-exiting .col-droite,
+.page-exiting .proj-col-droite { animation: pg-exit-right 0.35s ease both; }
+
 /* ---- Tag ---- */
 .tag {
   display: inline-flex;
