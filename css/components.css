@@ -218,3 +218,73 @@
 .btn-nav svg { display: block; flex-shrink: 0; }
 
 .btn-nav:active { transform: translateY(2px); }
+
+/* ---- Bouton contact (dark chunky : E-mail, LinkedIn, View CV) ---- */
+.btn-contact {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  background: var(--color-black);
+  border: var(--border-thin) solid var(--color-blue);
+  border-radius: var(--radius-md);
+  padding-bottom: 6px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-contact__face {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font-family: var(--font-display);
+  font-size: var(--text-s);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 1;
+  padding: var(--space-8) var(--space-32) 6px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-contact:active {
+  transform: translateY(3px);
+  padding-bottom: 3px;
+}
+
+/* ---- Lightbox ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 16, 16, 0.95);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  cursor: zoom-out;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox__img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  cursor: default;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: var(--space-32);
+  right: var(--space-32);
+}
