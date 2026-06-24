@@ -468,7 +468,7 @@
 .proj-actions .btn-chunky { width: 100%; justify-content: center; }
 
 /* ---- Colonne droite ---- */
-.proj-col-droite {
+.proj-col-droite-inner {
   display: flex;
   flex-direction: column;
   gap: var(--space-24);
@@ -607,8 +607,9 @@
     height: 100vh;
     overflow-y: auto;
     scrollbar-width: none;
-    padding-bottom: var(--space-64);
   }
 
   .proj-col-droite::-webkit-scrollbar { display: none; }
+
+  .proj-col-droite-inner { padding-bottom: var(--space-64); }
 }

@@ -92,7 +92,7 @@ function buildBlock(block) {
 
 function buildRightCol(project) {
   const blocks = project.blocks.map(buildBlock).join('\n');
-  return `<main class="proj-col-droite" id="proj-col-droite">${blocks}</main>`;
+  return `<main class="proj-col-droite" id="proj-col-droite"><div class="proj-col-droite-inner">${blocks}</div></main>`;
 }
 
 function attachNavHandlers(prevSlug, nextSlug) {
@@ -140,6 +140,8 @@ async function init() {
   }
 
   attachNavHandlers(prevSlug, nextSlug);
+  if (window.__smoothScroll) window.__smoothScroll.init();
+  if (window.__scrollTrigger) window.__scrollTrigger.init();
   initLightbox();
 }
 
