@@ -23,7 +23,7 @@
 /* ---- Médias : photo + mascotte côte à côte ---- */
 .profil-media-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: var(--space-8);
 }
 
@@ -31,11 +31,11 @@
 .profil-mascot-card {
   flex: 1 0 0;
   min-width: 0;
+  aspect-ratio: 1 / 1;
   background: var(--color-cream);
   border: var(--border-thin) solid var(--color-ink);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  height: 353px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -277,6 +277,9 @@
 
   .profil-photo-card,
   .profil-mascot-card {
+    flex: 1 0 0;
+    width: auto;
+    aspect-ratio: auto;
     height: 350px;
   }
 
