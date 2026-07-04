@@ -149,14 +149,6 @@
   transform: translateY(0);
 }
 
-/* Mobile & tablette : tag + flèche toujours visibles */
-@media (max-width: 1279px) {
-  .card-tag,
-  .card-arrow {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* ---- Carte process (page profil) ---- */
 .card-process {
