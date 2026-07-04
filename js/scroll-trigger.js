@@ -20,7 +20,7 @@
           scrollTrigger: {
             trigger: el,
             scroller: scroller,
-            start: 'top 90%',
+            start: 'top 100%',
             toggleActions: 'play none none none',
           },
         });
