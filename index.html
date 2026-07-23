@@ -145,6 +145,7 @@
   <div id="card-tooltip" class="card-tooltip" aria-hidden="true"></div>
   <script>
     (function () {
+      if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
       const tip = document.getElementById('card-tooltip');
       document.querySelectorAll('.card-project').forEach(function (card) {
         card.addEventListener('mousemove', function (e) {
