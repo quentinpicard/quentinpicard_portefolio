@@ -35,4 +35,10 @@
   window.__transitions = { enterDynamic: enterDynamic, playExit: playExit };
 
   document.addEventListener('DOMContentLoaded', setupLinks);
+
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+      document.body.classList.remove('page-exiting');
+    }
+  });
 })();
