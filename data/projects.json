@@ -19,7 +19,11 @@
         { "type": "text", "text": "Direction artistique créée from scratch : identité visuelle, palette, typographies Gabarito et Playpen Sans, choisies pour leur caractère. Bruno incarne l'application, un brocoli bougon avec un côté attachant, qui donne de bons conseils même quand il râle." },
         { "type": "media", "layout": "duo", "images": ["img/projects/growup/Visuel 5.png", "img/projects/growup/Visuel 6.png"] },
         { "type": "text", "text": "Un design system dédié à GrowUp structure l'ensemble des composants et variables du projet. Le prototype avancé, lui, part directement de la maquette Figma : codé en vibe coding, sans grande prétention mais avec suffisamment d'interactions pour conduire des tests utilisateurs dans des conditions proches du réel." },
-        { "type": "media", "layout": "solo", "images": ["img/projects/growup/Visuel 7.png"] }
+        { "type": "media", "layout": "solo", "images": ["img/projects/growup/Visuel 7.png"] },
+        { "type": "text", "text": "L'onboarding de première connexion introduit Bruno et pose les bases de l'expérience. Il permet de comprendre le profil de l'utilisateur, type de jardin, plantes cultivées, niveau d'expérience, pour personnaliser le suivi dès le départ." },
+        { "type": "media", "layout": "solo", "images": ["img/projects/growup/Visuel 8.png"] },
+        { "type": "text", "text": "L'accueil centralise l'état du jardin en un coup d'œil, dans l'ambiance visuelle chaleureuse et organique de GrowUp. Les tâches structurent le quotidien du jardinier avec un suivi clair et actionnable. Les fiches plantes condensent toutes les infos utiles dans une mise en page lisible, fidèle à l'identité du projet." },
+        { "type": "media", "layout": "solo", "images": ["img/projects/growup/visuel 9.png"] }
       ]
     },
     "breasy": {

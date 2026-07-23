@@ -149,6 +149,22 @@
   transform: translateY(0);
 }
 
+@media (max-width: 420px) {
+  .card-project:hover img {
+    transform: none;
+  }
+
+  .card-project:hover .card-tag {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  .card-project:hover .card-arrow {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
 
 /* ---- Carte process (page profil) ---- */
 .card-process {
