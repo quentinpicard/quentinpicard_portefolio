@@ -235,12 +235,6 @@
   gap: var(--space-8);
 }
 
-/* ---- Canvas Rive — bouton contact pleine largeur ---- */
-.btn-canvas-wrapper--contact {
-  width: 260px;
-  height: 76px;
-}
-
 /* ---- Titre projet ---- */
 .proj-titre {
   font-family: var(--font-display);
