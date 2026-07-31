@@ -37,11 +37,11 @@
       ],
       "cover": "img/projects/breasy/cover.jpg",
       "blocks": [
-        { "type": "media", "layout": "hero", "images": ["img/projects/breasy/Média principal.png"] },
+        { "type": "media", "layout": "hero", "images": ["img/projects/breasy/Média principal.webp"] },
         { "type": "text", "text": "Identité visuelle médicale détournée, bordeaux, violet, bleu-gris, noir. Une palette qui joue la carte du sérieux pharmaceutique pour mieux amplifier l'absurdité du propos. Inter pour la neutralité clinique. L'inhalateur au centre de toutes les compositions, traité comme un vrai produit premium." },
-        { "type": "media", "layout": "duo", "images": ["img/projects/breasy/Visuel 1.png", "img/projects/breasy/Visuel 2.png"] },
+        { "type": "media", "layout": "duo", "images": ["img/projects/breasy/Visuel 1.webp", "img/projects/breasy/Visuel 2.webp"] },
         { "type": "text", "text": "Maquette desktop conçue autour de l'inhalateur comme objet central, sections produit, statistiques détournées, témoignages fictifs. Collaboration directe avec le développeur pour l'intégration, du cadrage des interactions jusqu'au rendu final mis en ligne." },
-        { "type": "media", "layout": "trio", "images": ["img/projects/breasy/Visuel 3.png", "img/projects/breasy/Visuel 4.png", "img/projects/breasy/Visuel 5.png"] }
+        { "type": "media", "layout": "trio", "images": ["img/projects/breasy/Visuel 3.webp", "img/projects/breasy/Visuel 4.webp", "img/projects/breasy/Visuel 5.webp"] }
       ]
     },
     "tara": {
