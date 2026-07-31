@@ -254,10 +254,10 @@
   .proj-titre { font-size: var(--text-proj-title); }
 }
 
-/* ---- Texte bloc colonne droite (bold + centré) ---- */
+/* ---- Texte bloc colonne droite (centré) ---- */
 .proj-texte {
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 500;
   font-size: var(--text-body);
   line-height: 1.25;
   letter-spacing: -0.02em;
