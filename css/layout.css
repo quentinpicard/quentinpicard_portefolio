@@ -219,11 +219,11 @@
 }
 
 /* Positions cartes — mobile */
-.card-cockpit   { grid-column: 1 / span 2; grid-row: 2 / span 2; }
 .card-tara      { grid-column: 1;          grid-row: 4; }
 .card-peyinnov  { grid-column: 2;          grid-row: 4; }
 .card-growup    { grid-column: 1 / span 2; grid-row: 2 / span 2; }
 .card-premieres { grid-column: 1;          grid-row: 7; }
+.card-solerya   { grid-column: 2;          grid-row: 7; }
 
 /* =========================================================
    TABLETTE — 768px : colonne unique, bento 3 colonnes
@@ -279,11 +279,13 @@
   }
 
   /* Repositionnement tablette (3 cols) */
-  .card-tara      { grid-column: 3;          grid-row: 1; }
-  .card-cockpit   { grid-column: 1 / span 2; grid-row: 2 / span 2; }
-  .card-peyinnov  { grid-column: 3;          grid-row: 2; }
-  .card-premieres { grid-column: 3;          grid-row: 3; }
-  .card-growup    { grid-column: 1 / span 2; grid-row: 2 / span 2; }
+  .card-kit-ui    { grid-column: 3;          grid-row: 1; }
+  .card-breasy    { grid-column: 3;          grid-row: 2; }
+  .card-tara      { grid-column: 1;          grid-row: 3; }
+  .card-growup    { grid-column: 1 / span 2; grid-row: 1 / span 2; }
+  .card-solerya   { grid-column: 2 / span 2; grid-row: 3 / span 2; }
+  .card-peyinnov  { grid-column: 1;          grid-row: 4; }
+  .card-premieres { grid-column: 1 / span 3; grid-row: 5; }
 }
 
 /* =========================================================
@@ -348,17 +350,11 @@
 
   .bento-projets {
     width: 100%;
+    align-self: flex-start;
+    grid-template-rows: repeat(3, calc((100vh - 16px) / 3));
     padding-right: var(--space-8);
     padding-top: var(--space-8);
   }
-
-  /* Positions cartes — desktop (3 cols) */
-  .card-kit-ui    { grid-column: 1;          grid-row: 1; }
-  .card-breasy    { grid-column: 2;          grid-row: 1; }
-  .card-tara      { grid-column: 3;          grid-row: 1; }
-  .card-growup    { grid-column: 1 / span 2; grid-row: 2 / span 2; }
-  .card-peyinnov  { grid-column: 3;          grid-row: 2; }
-  .card-premieres { grid-column: 3;          grid-row: 3; }
 }
 
 /* =========================================================

@@ -46,6 +46,7 @@
 .page-accueil .card-project:nth-child(4) { animation: pg-reveal 0.4s ease 0.66s both; }
 .page-accueil .card-project:nth-child(5) { animation: pg-reveal 0.4s ease 0.74s both; }
 .page-accueil .card-project:nth-child(6) { animation: pg-reveal 0.4s ease 0.82s both; }
+.page-accueil .card-project:nth-child(7) { animation: pg-reveal 0.4s ease 0.90s both; }
 
 /* ---- Tag ---- */
 .tag {
@@ -88,6 +89,10 @@
 
 @media (max-width: 1279px) {
   .card-project { aspect-ratio: 1 / 1; }
+}
+
+@media (min-width: 768px) {
+  .card-project.card-premieres { aspect-ratio: 3 / 1; }
 }
 
 .card-project img {

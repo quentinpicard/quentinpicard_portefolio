@@ -1,5 +1,5 @@
 {
-  "order": ["growup", "breasy", "tara", "stratevie", "lpg"],
+  "order": ["growup", "breasy", "solerya", "tara", "stratevie", "lpg"],
   "projects": {
     "growup": {
       "slug": "growup",
@@ -40,6 +40,30 @@
         { "type": "media", "layout": "duo", "images": ["img/projects/breasy/Visuel 1.webp", "img/projects/breasy/Visuel 2.webp"] },
         { "type": "text", "text": "Maquette desktop conçue autour de l'inhalateur comme objet central, sections produit, statistiques détournées, témoignages fictifs. Collaboration directe avec le développeur pour l'intégration, du cadrage des interactions jusqu'au rendu final mis en ligne." },
         { "type": "media", "layout": "trio", "images": ["img/projects/breasy/Visuel 3.webp", "img/projects/breasy/Visuel 4.webp", "img/projects/breasy/Visuel 5.webp"] }
+      ]
+    },
+    "solerya": {
+      "slug": "solerya",
+      "title": "Solérya : Application mobile de suivi agrivoltaïque",
+      "tags": ["UX/UI", "Design System", "IoT", "Green Tech"],
+      "intro": "Des capteurs IoT, un algorithme qui pilote des panneaux solaires au-dessus des cultures en temps réel, et des agriculteurs qui doivent vérifier que leurs rendements tiennent. Solérya exploite 34 installations agrivoltaïques sur quatre filières agricoles. L'app mobile permet aux exploitants de suivre l'impact sur leurs parcelles, un projet Green IoT complet, du capteur terrain à l'écran.",
+      "tools": ["Figma", "Claude"],
+      "links": [
+        { "label": "View Figma", "url": "https://www.figma.com/design/BZf6ubK35rP0JxqJFjcpJU/Sol%C3%A9rya-Energie---Maquette?node-id=0-1&t=0V9nNnOvpJB1FoUm-1" },
+        { "label": "View Design system", "url": "https://www.figma.com/design/eHJouN51Y5RnoMDBUCIv6B/Design-system---Sol%C3%A9rya-Energie?node-id=0-1&t=q2hmaLfH9ojXAOUs-1" }
+      ],
+      "blocks": [
+        { "type": "media", "layout": "hero", "images": ["img/projects/solerya/Média principal.webp"] },
+        { "type": "text", "text": "Solérya doit prouver chaque année que ses panneaux ne dégradent pas la production agricole. Si le rendement d'une parcelle tombe sous 90 % de sa zone témoin, l'installation perd sa qualification. L'app existante du partenaire technologique n'est pas utilisée, moins d'un exploitant sur cinq l'ouvre. L'objectif : une app que l'agriculteur ouvre en 30 secondes et comprend immédiatement, sur le terrain, en plein soleil." },
+        { "type": "media", "layout": "solo", "images": ["img/projects/solerya/Vignette 1.webp"] },
+        { "type": "text", "text": "L'entretien de cadrage a posé les bases de la conception. L'exploitant veut savoir une seule chose : est-ce que sa parcelle tient les 90 %. Le rendement réel n'existe qu'à la récolte : en cours de saison, on travaille avec des indicateurs de tendance. Quatre filières avec des métriques complètement différentes, un usage ponctuel en période critique, et du réseau variable." },
+        { "type": "media", "layout": "trio", "images": ["img/projects/solerya/Vignette 2.webp", "img/projects/solerya/Vignette 3.webp", "img/projects/solerya/Vignette 4.webp"] },
+        { "type": "text", "text": "Cinq destinations, pas de profondeur inutile. Home (tout va bien ?), Parcelles (liste + fiche détaillée), Suivi (historique pluriannuel), Compte (documents, contact), Alertes (modale filtrable)." },
+        { "type": "media", "layout": "solo", "images": ["img/projects/solerya/Vignette 5.webp"] },
+        { "type": "text", "text": "Un design system construit from scratch couvrant web et mobile dans un seul fichier Figma. Architecture en trois collections de variables (Primitives → Tokens_colors → Tokens), un mode Desktop/Mobile pour gérer les spécificités tactiles, et une librairie de composants publiée : boutons (72 variantes), tags (54 variantes), suite complète d'inputs." },
+        { "type": "media", "layout": "solo", "images": ["img/projects/solerya/Vignette 6.webp"] },
+        { "type": "text", "text": "Cinq écrans clés. La Home condense quatre blocs, alertes, synthèse parcelle vs seuil 90 %, état des panneaux, tendance de saison, avec le niveau de criticité le plus élevé remonté en header. La liste des parcelles utilise des cards simplifiées (nom, statut, cause, chevron) ; avec une seule parcelle, accès direct à la fiche. La fiche parcelle est la page pivot : six blocs en navigation ancrée (synthèse, indicateurs agronomiques par filière, météo temps réel, état des panneaux, historique météo, rendement réel à la récolte), chaque card intégrant la comparaison témoin comme un pattern du design system. Suivi offre une vision long terme avec la courbe d'évolution du ratio sur toutes les campagnes et une comparaison côte à côte entre deux années. Compte régit les documents contractuels et le contact du référent Solérya." },
+        { "type": "media", "layout": "solo", "images": ["img/projects/solerya/Vignette 7.webp"] }
       ]
     },
     "tara": {
